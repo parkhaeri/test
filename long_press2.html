@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>long press</title>
+  <link rel="stylesheet" href="css/long_press.css">
+</head>
+<body>
+  <div>
+    <div class="screen">
+      <div class="object">
+        <img src="img/balloon.png" alt="">
+      </div>
+    </div>
+    <div class="press"></div>
+  </div>
+
+<script>
+
+  /*
+  [JS 요약 설명]
+  1. window.onload : 웹 브라우저 로딩 완료 상태를 확인합니다
+  2. document.getElementById : 특정 id 값을 가진 객체를 지정합니다
+  3. addEventListener : 특정 객체에 이벤트를 등록합니다
+  4. mousedown : 마우스 클릭 시작 이벤트입니다 
+  5. mouseup : 마우스 클릭 종료 이벤트입니다
+  6. touchstart : 터치 시작 이벤트입니다
+  7. touchend : 터치 종료 이벤트입니다
+  8. Date.now() : UTC 기준으로 1970년 1월 1일 0시 0분 0초부터 현재까지 경과된 밀리 초를 반환합니다
+  9. 참고 : 모바일에서는 마우스 이벤트가 동작하지 않으므로 터치 이벤트를 사용해 추가 구현해야합니다
+  */   	    	
+
+
+  /* [html 최초 로드 및 이벤트 상시 대기 실시] */
+  window.onload = function() {
+    console.log("");
+    console.log("[window onload] : [start]");
+    console.log("");
+
+    // 객체 매핑 실시
+    /* var one_container = document.getElementById("one_container"); */    		
+    
+    const btn = document.querySelector('.press');
+    const object = document.querySelector('.object')
+    //btn.addEventListener("mousedown", mouseStart); //pc
+    //btn.addEventListener("mouseup", mouseEnd); //pc
+
+    //btn.addEventListener("touchstart", touchStart, false); //mobile
+    //btn.addEventListener("touchend", touchEnd, false); //mobile
+
+
+    // [pc] 롱 클릭 이벤트 등록 실시
+    let pcLong = 0;
+    let timer = 0
+    let timerId = 0
+
+    btn.addEventListener('mousedown', ()=>{
+      pcLong = Date.now(); //클릭한 시간 얻어옵니다
+
+      btn.classList.add("active");
+      object.classList.add("active");
+      timerId = setInterval(function(){
+        pcLong += 1;
+        document.querySelector('.object').style.setProperty('--offset',pcLong)
+      }, 1000)
+      return false;
+
+    });
+    btn.addEventListener('mouseup', ()=>{
+      var result = Date.now() - pcLong;
+      if(Number(result) > 800){ //롱 클릭 발생
+        console.log("");
+        console.log("[btn] : [mouseup] : [LongClick]");
+        console.log("[start] : " + pcLong);
+        console.log("[end] : " + Date.now());
+        console.log("[data] : " + Number(result)); 
+        console.log("");
+        //alert("LongClick");
+      }
+      else {
+        console.log("");
+        console.log("[btn] : [mouseup] : [result]");
+        console.log("[data] : " + Number(result));    				
+        console.log("");
+      }    			
+    });
+
+
+    // [mobile] 롱 클릭 이벤트 등록 실시
+    var mobileLong = 0;    		
+    function touchStart(evt) {
+      mobileLong = Date.now(); //터치한 시간 얻어옵니다
+    };
+    function touchEnd(evt) {
+      var result = Date.now() - mobileLong;
+      if(Number(result) > 800){ //롱 터치 발생 
+        console.log("");
+        console.log("[btn] : [touchend] : [LongTouch]");
+        console.log("[start] : " + mobileLong);
+        console.log("[end] : " + Date.now());
+        console.log("[data] : " + Number(result));
+        console.log("");
+        alert("LongTouch");
+      }
+      else {
+        console.log("");
+        console.log("[btn] : [touchend] : [result]");
+        console.log("[data] : " + Number(result));    				
+        console.log("");
+      }    			
+    };
+
+  };
+  
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>long press</title>
+  <link rel="stylesheet" href="css/long_press.css">
+</head>
+<body>
+  <div>
+    <div class="screen">
+      <div class="object">
+        <img src="img/balloon.png" alt="">
+      </div>
+    </div>
+    <div class="press"></div>
+  </div>
+
+  <script>
+
+
+  
+    const btn = document.querySelector('.press')
+    const object = document.querySelector('.object')
+    const timer = 0
+    const timerId = 0
+
+    btn.addEventListener('touchstart', ()=>{
+      btn.classList.add('active');
+      object.classList.add('active');
+      timerId = setInterval(function(){
+        timer += 1;
+       // btn.innerHTML = timer
+        document.querySelector('.object').style.setProperty('--offset',timer)
+      }, 1000)
+      return false;
+    })
+    btn.addEventListener('touchend', ()=>{
+      if(timer < 1) {
+        btn.classList.remove("active"); 
+      }
+      timer = 0
+      document.querySelector('.object').style.setProperty('--offset',0)
+      object.classList.remove("active");
+
+      clearTimeout(timerId);
+      return false;
+    })
+
+  </script>
+</body>
+</html>

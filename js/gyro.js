@@ -33,3 +33,8 @@ function addMouseEvent() {
 }
 
 window.addEventListener("deviceorientation", handleOrientation);
+
+
+
+
+

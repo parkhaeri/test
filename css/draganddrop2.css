@@ -1,0 +1,17 @@
+.sticker {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+.letter-container .letter-decor-container {
+  position: relative;
+}
+
+.letter-container .letter-decor-container { 
+  position: absolute;
+}
+
+
+
