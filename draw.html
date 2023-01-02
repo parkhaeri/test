@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="js/draw.js"></script>
+  <link rel="stylesheet" href="css/draw.css">
+</head>
+<body>
+
+
+  <div class="toolbar">
+  
+    <div>
+    <label id="stroke-width-label">Stroke: <span>040</span>px</label>
+    <input id="stroke-width" type="range" value="50" min="1" max="250">
+    </div>
+    
+    <div class="hue-container">
+      <label id="hue-label">Hue <span>&nbsp;</span></label>
+      <input id="hue" type="range" value="180" min="0" max="360">
+      <div id="rainbow">
+        <input type="checkbox" id="rainbow-toggle">
+        <label></label>
+      </div>  
+    </div>
+    
+    <div id="eraser-container">
+      <label>Eraser</label>
+      <div id="eraser">
+        <input type="checkbox" id="eraser-toggle">
+        <label></label>
+      </div>
+    </div>
+    
+  
+    
+  <!--  add toggle for hue rotation?  -->
+  
+    <div class="buttons-container">
+      
+      <button id="reset">Reset</button>
+    </div>
+    
+  <!--  background color?  -->
+    
+  </div>
+  
+  
+  
+  <div class="full-container">
+    Draw something!
+  </div>
+  
+  <canvas id="draw" width="80" height="80"></canvas>
+  
+</body>
+</html>

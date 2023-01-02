@@ -1,0 +1,244 @@
+body {
+  background: azure;
+}
+
+.content {
+    font-family: 'Comic Sans MS';
+}
+
+
+.drawing-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+    #drawing-pad {
+        margin: 0 auto;
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        max-width: 769px;
+        z-index: 2;
+    }
+
+        canvas {
+            width: 100%;
+            height: auto;
+
+            border: 1px solid black;
+            background: white;
+            padding: 0px 2px;
+            box-sizing: border-box;
+        }
+
+    .colors {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+        .color {
+            width: 45px;
+            height: 45px;
+            margin: 0.5em 0;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .color-red {
+            background-color: #ff0000;
+        }
+
+        .color-green {
+            background-color: #00ff00;
+        }
+
+        .color-pink {
+            background-color: #ff626c;
+        }
+
+        .color-yellow {
+            background-color: #fff02a;
+        }
+
+        .color-brown {
+            background-color: #b3853f;
+        }
+
+    .tools {
+        flex: 1;
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+    }
+
+        .tools > * {
+            flex: 1;
+        }
+
+        .tools h6 {
+            text-align: center;
+            font-size: 0.8em;
+        }
+
+        .size-wrapper {
+            padding: 0 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .size {
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid black;
+            margin: 0.5em 0;
+        }
+
+            .size.eraser-selected {
+                background-image: url('https://i.cdn.turner.com/adultswim/big/img/2016/05/04/eraser.png');
+                background-size: contain;
+                border: 2px solid gray;
+            }
+
+        .size-1 {
+            width: 40px;
+            height: 40px;
+        }
+
+        .size-2 {
+            width: 30px;
+            height: 30px;
+        }
+
+        .size-3 {
+            width: 20px;
+            height: 20px;
+        }
+
+        .size-4 {
+            width: 7px;
+            height: 7px;
+        }
+
+        .eraser {
+            width: 45px;
+            height: 42px;
+            background-image: url('https://i.cdn.turner.com/adultswim/big/img/2016/05/04/eraser.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 0.5em;
+            cursor: pointer;
+        }
+
+        .download {
+            width: 46px;
+            height: 27px;
+            background-image: url('https://i.cdn.turner.com/adultswim/big/img/2016/05/04/download.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 0 0.5em;
+            display: block;
+            cursor: pointer;
+        }
+
+@media (min-width: 1024px) {
+
+.content h1 {
+    font-size: 1.8em;
+    padding: 30px 10px;
+}
+
+
+    .drawing-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+        #drawing-pad {
+            margin: 0;
+            flex: 6;
+        }
+
+            canvas {
+                display: block;
+                padding: 0;
+                margin: 0 auto;
+                padding: 0px 4px;
+                border-width: 2px;
+                transform: rotate(-2deg);
+            }
+
+        .colors {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-top: 1em;
+            align-items: center;
+            padding-bottom: 30px;
+        }
+
+            .color {
+                width: 65px;
+                height: 65px;
+                margin: 0.5em 0;
+            }
+
+        .tools {
+            flex: 1;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            margin-top: 1em;
+            padding-bottom: 30px
+        }
+
+            .tools > * {
+                flex: 1;
+            }
+
+            .tools h6 {
+                flex: 0;
+            }
+
+            .size-wrapper {
+                margin: 0.5em 0;
+            }
+
+            .size-1 {
+                width: 50px;
+                height: 50px;
+            }
+
+            .size-2 {
+                width: 35px;
+                height: 35px;
+            }
+
+            .size-3 {
+                width: 20px;
+                height: 20px;
+            }
+
+            .size-4 {
+                width: 7px;
+                height: 7px;
+            }
+
+            .eraser {
+                width: 76px;
+                height: 71px;
+                margin: 0.5em 0;
+            }
+
+            .download {
+                width: 76px;
+                height: 55px;
+                margin: 0.5em 0;
+            }
+
+}

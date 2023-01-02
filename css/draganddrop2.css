@@ -1,17 +1,34 @@
-.sticker {
-  width: 100px;
-  height: 100px;
+#dragme{
+	margin: 0 auto;
+		position: relative;
+		width:150px;
+		height:150px;
+	top:30%;
+		background: #05041e;
+		border-radius: 15px;
+		border: outset 5px #42c8f4;
+		cursor: move;
+	
+
+}
+
+#dragme span{
+	position:relative;
+	padding-right:0;;
+	top: 30%;
+	bottom:30%;
+	left: 15px;
+	color: #fff;
+	font-family: cursive;
+	font-size: 28px;
 }
 
 
-
-.letter-container .letter-decor-container {
-  position: relative;
+span{
+	font-size: 20px;
+	font-weight: 600;
+	padding-right:8px;
+	font-family: sans-serif;
+	
 }
-
-.letter-container .letter-decor-container { 
-  position: absolute;
-}
-
-
 
