@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .bg_img {
+    display: inline-block;
+    width: 302px;
+    height: 302px;
+    position: absolute;
+    left: 3%;
+    top:3%;
+    background-image: url(./img/window.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .scraper {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:9;
+  user-select:none;
+  pointer-events:none;
+  opacity:0;
+  width: 100px;
+}  
+
+
+.bg_img:hover {
+  cursor:none;
+}
+.bg_img:hover .scraper {
+  opacity:1;
+}
+
+.scraper.move {
+  opacity:1;
+}
+
+</style>
+<body>
+  <div class="bg_img">
+    <canvas class="canvas" id='canvas' width="300" height="300" style="border: 1px solid gray;"> </canvas>
+    <img id="scraper" class="scraper" src="https://contentservice.mc.reyrey.net/image_v1.0.0/?id=4a4ccc87-084d-59af-86bc-75872423a9c6&637057171266363983" />
+  </div>
+  <button id="btn">다시</button>
+</body>
+<script src="./js/scratch.js"></script>
+</html>

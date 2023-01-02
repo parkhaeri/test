@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  position: relative;
+  display: block;
+  /* background-image: url("https://cloud.githubusercontent.com/assets/4652816/12771961/5341c3c4-ca68-11e5-844c-f659831d9c00.jpg"); */
+  background-image: url("../img/window.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  
+  min-height: 100vh;
+
+}
+
+canvas {
+  background: transparent;
+}
+
+
+.scraper {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:9;
+  user-select:none;
+  pointer-events:none;
+  opacity:0;
+  width: 100px;
+}
+
+
+.box:hover {
+  cursor:none;
+}
+.box:hover .scraper {
+  opacity:1;
+}

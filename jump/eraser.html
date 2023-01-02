@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/eraser.css">
+  <script src="js/eraser.js"></script>
+</head>
+<style>
+.loaded {
+
+}
+
+.loaded .page__preloader{
+  position: absolute;
+  background-color: transparent;
+  pointer-events: none;
+} 
+
+.loaded .page__preloader img {
+  opacity: 0;
+}
+
+.page__preloader{
+  position: fixed;
+  z-index: 9999;
+  background-color: #161616;
+  opacity: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  transition: opacity 1s cubic-bezier(0.8,0,0.4,1),background-color 1s cubic-bezier(0.8,0,0.4,1);
+}
+
+.page__preloader img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: auto;
+  margin: auto;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+</style>
+<body>
+  <div class="box">
+    <canvas id="canvas"></canvas>
+    <img id="scraper" class="scraper" src="https://contentservice.mc.reyrey.net/image_v1.0.0/?id=4a4ccc87-084d-59af-86bc-75872423a9c6&637057171266363983" />
+  </div>
+
+
+
+  <div class="page__preloader">
+    <img src="/img/orange_circles.gif" alt="">
+  </div>
+</body>
+</html>
